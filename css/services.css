@@ -2,139 +2,140 @@
 
 /* Services Section Styles */
 .services {
-    background: linear-gradient(to bottom, transparent, #ffffff);
-    min-height: 100vh;
-    padding: 60px 20px; /* Adjusted padding for better spacing */
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .services h2 {
-    font-size: 3em;
-    color: #000;
-    margin-bottom: 40px;
-    text-align: center;
-  }
-  
-  .services-container {
-    display: flex; /* or use 'display: grid;' if opting for CSS Grid */
-    flex-wrap: wrap; /* For Flexbox */
-    justify-content: center;
-    gap: 40px; /* Space between service cards */
-    padding: 0 40px; /* Horizontal padding */
-  }
-  
-  /* If using CSS Grid, replace the above Flexbox properties with:
-  .services-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-    padding: 0 40px;
-  }
-  */
-  
-  /* Service Card Styles */
+  background: white;
+  /*background: linear-gradient(to bottom, transparent, #ffffff); */
+  min-height: 100vh;
+  padding: 60px 20px; /* Adjusted padding for better spacing */
+  position: relative;
+  overflow: hidden;
+}
+
+.services h2 {
+  font-size: 3em;
+  color: #000;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.services-container {
+  display: flex; /* or use 'display: grid;' if opting for CSS Grid */
+  flex-wrap: wrap; /* For Flexbox */
+  justify-content: center;
+  gap: 40px; /* Space between service cards */
+  padding: 0 40px; /* Horizontal padding */
+}
+
+/* If using CSS Grid, replace the above Flexbox properties with:
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  padding: 0 40px;
+}
+*/
+
+/* Service Card Styles */
+.service-card {
+  background-color: rgba(255, 255, 255, 0.9);
+  flex: 1 1 calc(33.333% - 80px); /* Three cards per row minus total horizontal gap */
+  max-width: calc(33.333% - 80px); /* Ensures cards don't exceed three per row */
+  min-width: 250px; /* Adjust as needed for smaller screens */
+  padding: 40px 30px;
+  border-radius: 15px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.service-card.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.service-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Service Icon */
+.service-icon {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 30px;
+}
+
+.service-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-icon img {
+  transform: rotate(20deg);
+}
+
+/* Service Card Title */
+.service-card h3 {
+  font-size: 2em;
+  color: #181818;
+  margin-bottom: 20px;
+}
+
+/* Service Card Description */
+.service-card p {
+  color: #181818;
+  font-size: 1.1em;
+}
+
+/* Turquoise Accent Line */
+.service-card::before {
+  content: '';
+  position: absolute;
+  width: 5px;
+  height: 100%;
+  background-color: #40E0D0;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s ease;
+  transform: scaleY(0);
+  transform-origin: top;
+}
+
+.service-card:hover::before {
+  transform: scaleY(1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
   .service-card {
-    background-color: rgba(255, 255, 255, 0.9);
-    flex: 1 1 calc(33.333% - 80px); /* Three cards per row minus total horizontal gap */
-    max-width: calc(33.333% - 80px); /* Ensures cards don't exceed three per row */
-    min-width: 250px; /* Adjust as needed for smaller screens */
-    padding: 40px 30px;
-    border-radius: 15px;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-    position: relative;
-    overflow: hidden;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: transform 0.6s ease, opacity 0.6s ease;
+    flex: 1 1 calc(50% - 80px); /* Two cards per row */
+    max-width: calc(50% - 80px);
   }
-  
-  .service-card.animate {
-    opacity: 1;
-    transform: translateY(0);
+}
+
+@media (max-width: 800px) {
+  .service-card {
+    flex: 1 1 100%; /* One card per row */
+    max-width: 100%;
   }
-  
-  .service-card:hover {
-    transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Service Icon */
+}
+
+@media (max-width: 500px) {
   .service-icon {
-    width: 120px;
-    height: 120px;
-    margin: 0 auto 30px;
-  }
-  
-  .service-icon img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    transition: transform 0.3s ease;
-  }
-  
-  .service-card:hover .service-icon img {
-    transform: rotate(20deg);
-  }
-  
-  /* Service Card Title */
-  .service-card h3 {
-    font-size: 2em;
-    color: #000;
+    width: 100px;
+    height: 100px;
     margin-bottom: 20px;
   }
-  
-  /* Service Card Description */
+
+  .service-card h3 {
+    font-size: 1.8em;
+  }
+
   .service-card p {
-    color: #333;
-    font-size: 1.1em;
+    font-size: 1em;
   }
-  
-  /* Turquoise Accent Line */
-  .service-card::before {
-    content: '';
-    position: absolute;
-    width: 5px;
-    height: 100%;
-    background-color: #40E0D0;
-    top: 0;
-    left: 0;
-    transition: transform 0.3s ease;
-    transform: scaleY(0);
-    transform-origin: top;
-  }
-  
-  .service-card:hover::before {
-    transform: scaleY(1);
-  }
-  
-  /* Responsive Adjustments */
-  @media (max-width: 1200px) {
-    .service-card {
-      flex: 1 1 calc(50% - 80px); /* Two cards per row */
-      max-width: calc(50% - 80px);
-    }
-  }
-  
-  @media (max-width: 800px) {
-    .service-card {
-      flex: 1 1 100%; /* One card per row */
-      max-width: 100%;
-    }
-  }
-  
-  @media (max-width: 500px) {
-    .service-icon {
-      width: 100px;
-      height: 100px;
-      margin-bottom: 20px;
-    }
-  
-    .service-card h3 {
-      font-size: 1.8em;
-    }
-  
-    .service-card p {
-      font-size: 1em;
-    }
-  }
+}

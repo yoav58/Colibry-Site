@@ -1,75 +1,72 @@
-
-
 /* Footer Styles */
 .footer {
-    background-color: #000000; /* Black background */
-    color: #ffffff; /* White text color */
-    padding: 40px 20px;
-  }
-  
-  .footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  
+  background-color: #000000; /* Black background */
+  color: #ffffff; /* White text color */
+  padding: 40px 20px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-logo img {
+  width: 200px; /* Adjust size as needed */
+  margin-bottom: 20px;
+}
+
+.social-media {
+  margin-bottom: 20px;
+}
+
+.social-media a {
+  display: inline-block;
+  margin: 0 5px; /* Reduced horizontal margin */
+  transition: transform 0.3s ease;
+}
+
+.social-media a img {
+  width: 40px; /* Adjust size as needed */
+  height: 40px;
+}
+
+.social-media a:hover {
+  transform: scale(1.1);
+}
+
+.footer-nav {
+  margin-bottom: 20px;
+}
+
+.footer-nav a {
+  color: #ffffff;
+  margin: 0 15px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+  color: #40E0D0;
+}
+
+.footer-text p {
+  font-size: 1em;
+  margin: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
   .footer-logo img {
-    width: 200px; /* Adjust size as needed */
-    margin-bottom: 20px;
-  }
-  
-  .social-media {
-    margin-bottom: 20px;
-  }
-  
-  .social-media a {
-    display: inline-block;
-    margin: 0 10px;
-    transition: transform 0.3s ease;
-  }
-  
-  .social-media a img {
-    width: 40px; /* Adjust size as needed */
-    height: 40px;
-  }
-  
-  .social-media a:hover {
-    transform: scale(1.1);
-  }
-  
-  .footer-nav {
-    margin-bottom: 20px;
-  }
-  
-  .footer-nav a {
-    color: #ffffff;
-    margin: 0 15px;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  
-  .footer-nav a:hover {
-    color: #40E0D0;
-  }
-  
-  .footer-text p {
-    font-size: 1em;
-    margin: 0;
-  }
-  
-  /* Responsive Adjustments */
-  @media (max-width: 600px) {
-    .footer-logo img {
       width: 120px;
-    }
-  
-    .social-media a img {
+  }
+
+  .social-media a img {
       width: 30px;
       height: 30px;
-    }
-  
-    .footer-nav a {
-      margin: 0 10px;
-    }
   }
-  
+
+  .footer-nav a {
+      margin: 0 10px;
+  }
+}
