@@ -57,6 +57,9 @@
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
+.menu-button:hover span {
+  background: #30D5C8; /* Change to the desired turquoise color */
+}
 /* Navigation menu styling */
 .nav-menu {
   position: absolute;
