@@ -88,6 +88,12 @@
   text-decoration: none;
   padding: 15px;
   display: block;
+  transition: color 0.3s ease, font-weight 0.3s ease; /* Smooth transition */
+}
+
+.nav-menu a:hover {
+  color: #ffffff; /* Change to white */
+  font-weight: 600; /* Semi-bold */
 }
 
 .nav-menu a:hover {
