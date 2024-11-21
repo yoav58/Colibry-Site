@@ -1,9 +1,9 @@
-
 /* Hero Section Styles */
 .hero {
   display: flex;
-  flex-direction: row; /* Ensure default row direction */
-  height: 100vh; /* Full viewport height */
+  flex-direction: row; /* Default row direction */
+  height: calc(100vh - 80px); /* Full viewport height minus header height */
+  margin-top: 80px; /* Push down to avoid header overlap */
   overflow: hidden;
   position: relative;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);
@@ -87,6 +87,8 @@
 @media (max-width: 800px) {
   .hero {
     flex-direction: column;
+    height: calc(100vh - 60px); /* Adjust height for smaller header */
+    margin-top: 60px; /* Match header height on smaller screens */
   }
 
   .video-container {
