@@ -1,0 +1,31 @@
+/* Importing Section-Specific SCSS */
+@import 'header';
+@import 'hero';
+@import 'about';
+@import 'services';
+@import 'contact';
+@import 'footer';
+
+/* Common Styles */
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Alef', sans-serif; /* Ensure the font supports English */
+    direction: ltr; /* Changed to left-to-right */
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Remove default margins from sections */
+  section {
+    margin: 0;
+  }
