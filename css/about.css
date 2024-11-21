@@ -30,13 +30,13 @@
 /* Heading Styles */
 .about-us h2 {
   font-size: 8em; /* Increased font size for prominence */
-  color: #F4F4F4; /* Ensure heading is F4F4F4 */
+  color: #e2e2e2; /* Ensure heading is F4F4F4 */
   margin-bottom: 20px;
 }
 
 /* Paragraph Styles */
 .about-us p {
-  color: #f4f4f4; /* Ensure paragraphs are F4F4F4 */
+  color: #e2e2e2; /* Ensure paragraphs are F4F4F4 */
   font-size: 1.5em;
   line-height: 1.6;
   margin-bottom: 15px;
