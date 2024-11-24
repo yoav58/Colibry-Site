@@ -69,58 +69,61 @@ document.addEventListener('DOMContentLoaded', () => {
     );
   }
 
-  // Scroll-Triggered Animations
-  const options = { threshold: 1 }; // Adjust threshold as needed
-
-  const observer = new IntersectionObserver((entries) => {
+  // IntersectionObserver for service cards with high threshold
+  const serviceCardsObserverOptions = { threshold: 1 };
+  const serviceCardsObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       const target = entry.target;
 
-      // Handle service cards and "About Us" differently
-      if (
-        target.classList.contains('service-card') ||
-        target.classList.contains('about-us')
-      ) {
-        if (entry.isIntersecting) {
-          // Add 'animate' class only once
-          if (!target.classList.contains('animate')) {
-            target.classList.add('animate');
-          }
-          // For service cards on mobile, handle 'animate-line' class
-          if (target.classList.contains('service-card') && isMobileDevice()) {
-            target.classList.add('animate-line');
-          }
-        } else {
-          // For service cards on mobile, remove 'animate-line' to reset accent line animation
-          if (target.classList.contains('service-card') && isMobileDevice()) {
-            target.classList.remove('animate-line');
-          }
-          // Do not remove 'animate' class for 'about-us' or 'service-card'
+      if (entry.isIntersecting) {
+        // Add 'animate' class only once
+        if (!target.classList.contains('animate')) {
+          target.classList.add('animate');
+        }
+        // For service cards on mobile, handle 'animate-line' class
+        if (isMobileDevice()) {
+          target.classList.add('animate-line');
         }
       } else {
-        // For other elements (e.g., 'contact-us'), add and remove 'animate' class
-        if (entry.isIntersecting) {
-          target.classList.add('animate');
-        } else {
-          target.classList.remove('animate');
+        // For service cards on mobile, remove 'animate-line' to reset accent line animation
+        if (isMobileDevice()) {
+          target.classList.remove('animate-line');
         }
+        // Do not remove 'animate' class for 'service-card'
       }
     });
-  }, options);
+  }, serviceCardsObserverOptions);
 
-  // Observe service cards
+  // IntersectionObserver for other sections with lower threshold
+  const otherSectionsObserverOptions = { threshold: 0.2 }; // Adjust as needed
+  const otherSectionsObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const target = entry.target;
+
+      if (entry.isIntersecting) {
+        // Add 'animate' class only once
+        if (!target.classList.contains('animate')) {
+          target.classList.add('animate');
+        }
+      } else {
+        // Do not remove 'animate' class to prevent reanimation
+      }
+    });
+  }, otherSectionsObserverOptions);
+
+  // Observe service cards with high threshold observer
   const serviceCards = document.querySelectorAll('.service-card');
-  serviceCards.forEach((card) => observer.observe(card));
+  serviceCards.forEach((card) => serviceCardsObserver.observe(card));
 
-  // Observe 'about-us' section
+  // Observe 'about-us' section with lower threshold observer
   const aboutUsSection = document.querySelector('.about-us');
   if (aboutUsSection) {
-    observer.observe(aboutUsSection);
+    otherSectionsObserver.observe(aboutUsSection);
   }
 
-  // Observe other sections if needed
+  // Observe other sections if needed (e.g., 'contact-us')
   const contactUsSection = document.querySelector('.contact-us');
   if (contactUsSection) {
-    observer.observe(contactUsSection);
+    otherSectionsObserver.observe(contactUsSection);
   }
 });
