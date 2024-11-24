@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Scroll-Triggered Animations
-  const options = { threshold: 0.5 }; // Adjust threshold as needed
+  const options = { threshold: 0.8 }; // Adjust threshold as needed
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
