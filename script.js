@@ -14,7 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
   function toggleMenu() {
     navMenu.classList.toggle('active');
     menuButton.classList.toggle('active');
-    const expanded = menuButton.getAttribute('aria-expanded') === 'true' || false;
+    const expanded =
+      menuButton.getAttribute('aria-expanded') === 'true' || false;
     menuButton.setAttribute('aria-expanded', !expanded);
   }
 
@@ -23,18 +24,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   heroContainers.forEach((container) => {
     container.addEventListener('click', () => {
-      const targetId = container.id === 'video1'
-        ? 'contact'
-        : container.id === 'video2'
-        ? 'about'
-        : container.id === 'video3'
-        ? 'services'
-        : null;
+      const targetId =
+        container.id === 'video1'
+          ? 'contact'
+          : container.id === 'video2'
+          ? 'about'
+          : container.id === 'video3'
+          ? 'services'
+          : null;
 
       if (targetId) {
         const targetSection = document.getElementById(targetId);
         if (targetSection) {
-          targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          targetSection.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+          });
         }
       }
     });
@@ -54,23 +59,68 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Function to detect mobile devices
+  function isMobileDevice() {
+    return (
+      typeof window.orientation !== 'undefined' ||
+      navigator.userAgent.indexOf('IEMobile') !== -1 ||
+      navigator.maxTouchPoints > 0 ||
+      'ontouchstart' in window
+    );
+  }
+
   // Scroll-Triggered Animations
-  const options = { threshold: 0.1 };
-  const observer = new IntersectionObserver((entries, observerInstance) => {
+  const options = { threshold: 0.5 }; // Adjust threshold as needed
+
+  const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('animate');
-        observerInstance.unobserve(entry.target);
+      const target = entry.target;
+
+      // Handle service cards and "About Us" differently
+      if (
+        target.classList.contains('service-card') ||
+        target.classList.contains('about-us')
+      ) {
+        if (entry.isIntersecting) {
+          // Add 'animate' class only once
+          if (!target.classList.contains('animate')) {
+            target.classList.add('animate');
+          }
+          // For service cards on mobile, handle 'animate-line' class
+          if (target.classList.contains('service-card') && isMobileDevice()) {
+            target.classList.add('animate-line');
+          }
+        } else {
+          // For service cards on mobile, remove 'animate-line' to reset accent line animation
+          if (target.classList.contains('service-card') && isMobileDevice()) {
+            target.classList.remove('animate-line');
+          }
+          // Do not remove 'animate' class for 'about-us' or 'service-card'
+        }
+      } else {
+        // For other elements (e.g., 'contact-us'), add and remove 'animate' class
+        if (entry.isIntersecting) {
+          target.classList.add('animate');
+        } else {
+          target.classList.remove('animate');
+        }
       }
     });
   }, options);
 
+  // Observe service cards
   const serviceCards = document.querySelectorAll('.service-card');
   serviceCards.forEach((card) => observer.observe(card));
 
+  // Observe 'about-us' section
   const aboutUsSection = document.querySelector('.about-us');
-  observer.observe(aboutUsSection);
+  if (aboutUsSection) {
+    observer.observe(aboutUsSection);
+  }
 
+  // Observe other sections if needed
   const contactUsSection = document.querySelector('.contact-us');
-  observer.observe(contactUsSection);
+  if (contactUsSection) {
+    observer.observe(contactUsSection);
+  }
 });

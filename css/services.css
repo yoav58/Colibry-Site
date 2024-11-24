@@ -1,11 +1,8 @@
-
-
 /* Services Section Styles */
 .services {
   background: white;
-  /*background: linear-gradient(to bottom, transparent, #ffffff); */
   min-height: 100vh;
-  padding: 60px 20px; /* Adjusted padding for better spacing */
+  padding: 60px 20px;
   position: relative;
   overflow: hidden;
 }
@@ -18,28 +15,19 @@
 }
 
 .services-container {
-  display: flex; /* or use 'display: grid;' if opting for CSS Grid */
-  flex-wrap: wrap; /* For Flexbox */
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 40px; /* Space between service cards */
-  padding: 0 40px; /* Horizontal padding */
-}
-
-/* If using CSS Grid, replace the above Flexbox properties with:
-.services-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: 40px;
   padding: 0 40px;
 }
-*/
 
 /* Service Card Styles */
 .service-card {
   background-color: rgba(255, 255, 255, 0.9);
-  flex: 1 1 calc(33.333% - 80px); /* Three cards per row minus total horizontal gap */
-  max-width: calc(33.333% - 80px); /* Ensures cards don't exceed three per row */
-  min-width: 250px; /* Adjust as needed for smaller screens */
+  flex: 1 1 calc(33.333% - 80px);
+  max-width: calc(33.333% - 80px);
+  min-width: 250px;
   padding: 40px 30px;
   border-radius: 15px;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
@@ -105,21 +93,23 @@
   transform-origin: top;
 }
 
-.service-card:hover::before {
+/* Trigger animation on hover or when .animate-line class is added */
+.service-card:hover::before,
+.service-card.animate-line::before {
   transform: scaleY(1);
 }
 
 /* Responsive Adjustments */
 @media (max-width: 1200px) {
   .service-card {
-    flex: 1 1 calc(50% - 80px); /* Two cards per row */
+    flex: 1 1 calc(50% - 80px);
     max-width: calc(50% - 80px);
   }
 }
 
 @media (max-width: 800px) {
   .service-card {
-    flex: 1 1 100%; /* One card per row */
+    flex: 1 1 100%;
     max-width: 100%;
   }
 }
