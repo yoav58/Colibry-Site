@@ -21,7 +21,7 @@
 }
 
 .logo img {
-  height: 100px;
+  height: 120px;
 }
 
 /* Menu button styling */
@@ -108,10 +108,11 @@
 /* Responsive Design */
 @media (max-width: 600px) {
   .nav-menu {
-      width: 100%;
+    width: 100%;
   }
 
   .logo img {
-      height: 50px;
+    height: 80px; /* Increase the size for mobile */
+    width: auto; /* Maintain aspect ratio */
   }
 }

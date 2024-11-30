@@ -1,7 +1,7 @@
 
 /* About Us Section Styles */
 .about-us {
-  background-color: #000000; /* Black background */
+  background-color: black; /* Black background */
   /* color: #ffffff; /* White text */
   padding: 0; /* Remove padding to occupy full screen */
   text-align: center; /* Center the text horizontally */

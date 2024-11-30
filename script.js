@@ -12,11 +12,46 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   function toggleMenu() {
+    const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
     navMenu.classList.toggle('active');
     menuButton.classList.toggle('active');
-    const expanded =
-      menuButton.getAttribute('aria-expanded') === 'true' || false;
-    menuButton.setAttribute('aria-expanded', !expanded);
+    menuButton.setAttribute('aria-expanded', !isExpanded);
+
+    // Reset menu button color to black when menu is closed
+    if (!navMenu.classList.contains('active')) {
+      resetMenuButtonColor();
+    }
+  }
+
+  function resetMenuButtonColor() {
+    const menuSpans = menuButton.querySelectorAll('span');
+    menuSpans.forEach((span) => {
+      span.style.backgroundColor = '#000'; // Black color
+    });
+  }
+
+  // Scroll event to close the menu on mobile
+  window.addEventListener('scroll', () => {
+    if (isMobileDevice() && navMenu.classList.contains('active')) {
+      closeMenu();
+    }
+  });
+
+  function closeMenu() {
+    navMenu.classList.remove('active');
+    menuButton.classList.remove('active');
+    menuButton.setAttribute('aria-expanded', 'false');
+    resetMenuButtonColor();
+  }
+
+  // Function to detect mobile devices
+  function isMobileDevice() {
+    return (
+      typeof window.orientation !== 'undefined' ||
+      navigator.userAgent.indexOf('IEMobile') !== -1 ||
+      navigator.maxTouchPoints > 0 ||
+      'ontouchstart' in window
+    );
   }
 
   // Scroll functionality for hero section
@@ -58,16 +93,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   });
-
-  // Function to detect mobile devices
-  function isMobileDevice() {
-    return (
-      typeof window.orientation !== 'undefined' ||
-      navigator.userAgent.indexOf('IEMobile') !== -1 ||
-      navigator.maxTouchPoints > 0 ||
-      'ontouchstart' in window
-    );
-  }
 
   // IntersectionObserver for service cards with high threshold
   const serviceCardsObserverOptions = { threshold: 1 };
