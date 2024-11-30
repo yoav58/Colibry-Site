@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const menuButton = document.getElementById('menu-button');
   const navMenu = document.getElementById('nav-menu');
+  const heroContainers = document.querySelectorAll('.video-container');
 
   // Menu Toggle
   menuButton.addEventListener('click', toggleMenu);
@@ -54,9 +55,20 @@ document.addEventListener('DOMContentLoaded', () => {
     );
   }
 
-  // Scroll functionality for hero section
-  const heroContainers = document.querySelectorAll('.video-container');
+  // Disable video playback on mobile but keep the poster
+  if (isMobileDevice()) {
+    heroContainers.forEach((container) => {
+      const video = container.querySelector('video');
+      if (video) {
+        video.pause(); // Stop video playback
+        video.removeAttribute('autoplay'); // Remove autoplay on mobile
+        video.removeAttribute('loop'); // Remove looping to prevent unwanted behavior
+        video.style.pointerEvents = 'none'; // Disable interaction with the video
+      }
+    });
+  }
 
+  // Scroll functionality for hero section
   heroContainers.forEach((container) => {
     container.addEventListener('click', () => {
       const targetId =
@@ -80,19 +92,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Video Hover Play Functionality
-  heroContainers.forEach((container) => {
-    const video = container.querySelector('video');
-    if (video) {
-      container.addEventListener('mouseenter', () => {
-        video.play();
-      });
-      container.addEventListener('mouseleave', () => {
-        video.pause();
-        video.currentTime = 0;
-      });
-    }
-  });
+  // Video Hover Play Functionality (only for non-mobile)
+  if (!isMobileDevice()) {
+    heroContainers.forEach((container) => {
+      const video = container.querySelector('video');
+      if (video) {
+        container.addEventListener('mouseenter', () => {
+          video.play();
+        });
+        container.addEventListener('mouseleave', () => {
+          video.pause();
+          video.currentTime = 0;
+        });
+      }
+    });
+  }
 
   // IntersectionObserver for service cards with high threshold
   const serviceCardsObserverOptions = { threshold: 1 };
