@@ -1,0 +1,6 @@
+{
+    "rewrites": [
+      { "source": "/crm/(.*)", "destination": "/crm/$1" },
+      { "source": "/(.*)", "destination": "/$1" }
+    ]
+  }
