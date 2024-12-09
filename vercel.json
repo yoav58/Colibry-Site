@@ -1,6 +1,8 @@
 {
-    "rewrites": [
-      { "source": "/crm/(.*)", "destination": "/crm/$1" },
-      { "source": "/(.*)", "destination": "/$1" }
-    ]
-  }
+  "rewrites": [
+    { "source": "/crm/(.*)", "destination": "/crm/$1" },
+    { "source": "/tracker", "destination": "/tracker/index.html" },
+    { "source": "/tracker/(.*)", "destination": "/tracker/index.html" },
+    { "source": "/(.*)", "destination": "/$1" }
+  ]
+}
