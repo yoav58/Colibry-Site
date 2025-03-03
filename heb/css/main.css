@@ -1,0 +1,64 @@
+/* Importing Section-Specific SCSS */
+@import 'header';
+@import 'hero';
+@import 'about';
+@import 'services';
+@import 'contact';
+@import 'footer';
+
+/* Common Styles */
+
+.shared-background {
+  background: url('../Assets/Images/neonBackground.png') no-repeat center center;
+  background-size: cover;
+}
+
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Alef', sans-serif; /* Ensure the font supports English and Hebrew */
+  direction: ltr; /* Default to left-to-right */
+  margin: 0;
+  padding: 0;
+  background-color: #000000; /* Black background */
+  color: #ffffff; /* Default text color for readability */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Remove default margins from sections */
+section {
+  margin: 0;
+  padding: 0; /* Add padding at the section level if needed */
+}
+
+/* Global Link Styles */
+a {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Match the text color */
+  transition: color 0.3s ease; /* Smooth color change on hover */
+}
+
+a:hover {
+  color: #f4f4f4; /* Light grey on hover */
+}
+
+/* Heading Styles */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 10px 0; /* Add some spacing */
+}
+
+/* Paragraph Styles */
+p {
+  margin: 0;
+  line-height: 1.6; /* Improve readability */
+  padding: 10px 0; /* Optional spacing */
+}
