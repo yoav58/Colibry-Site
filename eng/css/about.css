@@ -1,0 +1,77 @@
+/* About Us Section Styles */
+.about-us {
+    background-color: black; /* Black background */
+    padding: 0; /* Remove padding to occupy full screen */
+    text-align: center; /* Center content horizontally */
+    height: 100vh; /* Occupy full viewport height */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    opacity: 0;
+    transform: translateY(50px);
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    position: relative;
+    direction: rtl; /* Right-to-left text direction */
+    font-family: 'Arial', 'Helvetica', sans-serif; /* Clean, modern font */
+  }
+  
+  /* New Wrapper for About Us Content */
+  .about-content {
+    max-width: 800px; /* Limit the width for better readability */
+    padding: 20px; /* Optional padding */
+    text-align: center; /* Center-align text */
+  }
+  
+  /* Animation Class */
+  .about-us.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Heading Styles */
+  .about-us h2 {
+    font-size: 6em; /* Larger font size for prominence */
+    color: #e2e2e2; /* Subtle grey for readability */
+    margin-bottom: 20px;
+    text-align: center; /* Ensure heading is centered */
+  }
+  
+  /* Paragraph Styles */
+  .about-us p {
+    color: #e2e2e2; /* Subtle grey for paragraphs */
+    font-size: 2em; /* Increased font size */
+    line-height: 1.8; /* Better readability with increased line spacing */
+    margin-bottom: 20px;
+    text-align: right; /* Center-align text */
+  }
+  
+  /* Responsive Adjustments for About Us Section */
+  @media (max-width: 800px) {
+    .about-us {
+      padding: 20px 10px; /* Adjust padding if necessary */
+      height: auto; /* Allow height to adjust based on content */
+    }
+  
+    .about-content {
+      max-width: 90%; /* Adjust width on smaller screens */
+    }
+  
+    .about-us h2 {
+      font-size: 3.5em; /* Adjust heading size for smaller screens */
+    }
+  
+    .about-us p {
+      font-size: 1.5em; /* Adjust paragraph size for smaller screens */
+    }
+  }
+  
+  /* Additional Adjustment for Smaller Screens */
+  @media (max-width: 400px) {
+    .about-us h2 {
+      font-size: 2.5em;
+    }
+    .about-us p {
+      font-size: 1.2em;
+    }
+  }
+  

@@ -3,18 +3,28 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 
+<<<<<<< HEAD
 const RESOURCES = {"flutter_bootstrap.js": "4ea73f358d0fde77dadc6f007bb67b56",
 "version.json": "716cf141aa04f87e8b8b0fb1c3096d5a",
 "index.html": "57dd80732a8f1f1cf5c2d696bd316b1f",
 "/": "57dd80732a8f1f1cf5c2d696bd316b1f",
 "main.dart.js": "37650f6c718e77aaee10dadaee8b067e",
 "flutter.js": "4b2350e14c6650ba82871f60906437ea",
+=======
+const RESOURCES = {"flutter_bootstrap.js": "c4151dce36d0938c5de205e1e50e5a18",
+"version.json": "716cf141aa04f87e8b8b0fb1c3096d5a",
+"index.html": "57dd80732a8f1f1cf5c2d696bd316b1f",
+"/": "57dd80732a8f1f1cf5c2d696bd316b1f",
+"main.dart.js": "7daae56474da8b670d2bbc971ba29e23",
+"flutter.js": "f393d3c16b631f36852323de8e583132",
+>>>>>>> parent of 55d1031 (update CRM UI)
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
 "icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "manifest.json": "febcf793c3a200c37f1db8faed82406c",
+<<<<<<< HEAD
 "assets/AssetManifest.json": "b1cba9ea6c1e83831130475fa8e52da5",
 "assets/NOTICES": "3b448a084524901977a2cfcaa66e9ebd",
 "assets/FontManifest.json": "dc3d03800ccca4601324923c0b1d6d57",
@@ -33,6 +43,16 @@ const RESOURCES = {"flutter_bootstrap.js": "4ea73f358d0fde77dadc6f007bb67b56",
 "assets/assets/images/neonBackground.png": "a9ac6e875b30559c7b1e70fd54207027",
 "assets/assets/logobird/THE%2520BIRD-02.png": "65deaa5f45470be10e38f7e04357eab7",
 "assets/assets/logobird/THE%2520BIRD-03.png": "21457df6ee893a30fd17838677ca48d1",
+=======
+"assets/AssetManifest.json": "97931cd49fba3c4b4dd7e49c44cccf82",
+"assets/NOTICES": "e16fbd29c62a9e7a131fca68e5444fb9",
+"assets/FontManifest.json": "dc3d03800ccca4601324923c0b1d6d57",
+"assets/AssetManifest.bin.json": "6de52111f955545f401ad3f2c270e8f7",
+"assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "e986ebe42ef785b27164c36a9abc7818",
+"assets/shaders/ink_sparkle.frag": "ecc85a2e95f5e9f53123dcaf8cb9b6ce",
+"assets/AssetManifest.bin": "c1ee6513ee10824f48f08afe10b3e29b",
+"assets/fonts/MaterialIcons-Regular.otf": "7ec1e89c3b02ee1c9571912f0026fb64",
+>>>>>>> parent of 55d1031 (update CRM UI)
 "assets/assets/logobird/bird1.svg": "b9082f0e2ca35fb6a585b8c61668ed54",
 "assets/assets/logofonts/belize_crm_font.png": "b35a40bb0faa2e113ae7f94a4f27e411",
 "assets/assets/logofonts/logoTop2.png": "cb35a6028c5af2c08a4fd6ffa6494964",
