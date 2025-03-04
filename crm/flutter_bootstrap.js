@@ -11,10 +11,6 @@ _flutter.buildConfig = {"engineRevision":"cb4b5fff73850b2e42bd4de7cb9a4310a78ac4
 
 _flutter.loader.load({
   serviceWorkerSettings: {
-<<<<<<< HEAD
-    serviceWorkerVersion: "2132703855"
-=======
-    serviceWorkerVersion: "570398955"
->>>>>>> parent of 55d1031 (update CRM UI)
+    serviceWorkerVersion: "121230594"
   }
 });
