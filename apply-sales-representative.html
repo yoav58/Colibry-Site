@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply for Sales Representative - Colibry</title>
+    <meta name="description" content="Apply for the Sales Representative position at Colibry. Join our dynamic team selling cutting-edge AI platforms.">
+
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/job-application.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logos/logoFont.svg" alt="Colibry Logo" style="height: 6rem;">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#products">Products</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="index.html#careers">Careers</a></li>
+                <li><a href="index.html#contact" class="cta-button">Get Started</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Job Header -->
+    <section class="job-header">
+        <div class="job-header-content">
+            <div class="job-badge">Part-Time Position</div>
+            <h1>Sales Representative</h1>
+            <div class="job-meta">
+                <div class="job-meta-item">
+                    <span>📍</span>
+                    <span>Remote / Hybrid</span>
+                </div>
+                <div class="job-meta-item">
+                    <span>💰</span>
+                    <span>Commission + Base</span>
+                </div>
+                <div class="job-meta-item">
+                    <span>🕒</span>
+                    <span>Part-Time</span>
+                </div>
+            </div>
+            <p>Help us grow Colibry’s customer base by promoting and selling our AIgent platform. Ideal for a communicator and closer who loves tech.</p>
+        </div>
+    </section>
+
+    <!-- Job Description -->
+    <section class="job-description">
+        <div class="job-content">
+            <a href="index.html#careers" class="back-button">← Back to Careers</a>
+
+            <div class="job-section">
+                <h3>About the Role</h3>
+                <p>We’re looking for a motivated Sales Representative to identify leads, present product demos, and close deals for our AI-powered platforms. You’ll work closely with our growth team to expand our reach and build meaningful client relationships.</p>
+            </div>
+
+            <div class="job-section">
+                <h3>Required Qualifications</h3>
+                <ul>
+                    <li>1+ years in B2B or SaaS sales</li>
+                    <li>Excellent communication & persuasion skills</li>
+                    <li>Fluency in English and Hebrew – Must</li>
+                    <li>Ability to manage and nurture leads through CRM</li>
+                    <li>Understanding of AI, CRM, or software platforms is a plus</li>
+                    <li>Self-motivated and goal-oriented</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Form -->
+    <section class="application-section">
+        <div class="application-container">
+            <div class="application-card">
+                <h2>Apply for this Position</h2>
+                <p>We’d love to hear from you! Please fill out the application form below and attach your resume.</p>
+
+                <form class="contact-form" action="https://formspree.io/f/mdkodgdq" method="POST" id="jobApplicationForm" enctype="multipart/form-data">
+                    <input type="hidden" name="position" value="Sales Representative">
+                    <input type="hidden" name="application_type" value="job_application">
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location">Location *</label>
+                        <input type="text" id="location" name="location" placeholder="City, Country" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="linkedin">LinkedIn Profile</label>
+                        <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/yourprofile">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="coverLetter">Why are you a good fit for this role? *</label>
+                        <textarea id="coverLetter" name="coverLetter" rows="6" placeholder="Tell us about your experience in sales and why you're excited to join Colibry…" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="resume">Resume/CV *</label>
+                        <div class="file-upload-area" id="fileUploadArea">
+                            <input type="file" id="resume" accept=".pdf,.doc,.docx" required class="file-input">
+                            <div class="file-upload-content">
+                                <div class="file-upload-icon">📄</div>
+                                <div class="file-upload-text">Click to upload or drag and drop</div>
+                                <div class="file-upload-hint">PDF, DOC, or DOCX (max 5MB)</div>
+                            </div>
+                        </div>
+                        <div id="fileInfo" style="display: none;"></div>
+                    </div>
+
+                    <button type="submit" class="btn-primary form-submit">
+                        <span class="submit-text">🚀 Submit Application</span>
+                        <span class="submit-loading" style="display: none;">Submitting...</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">Colibry</div>
+            <p>Advanced business solutions powered by cutting-edge technology and AI innovation.</p>
+            <div class="footer-links">
+                <a href="index.html#products">Products</a>
+                <a href="index.html#about">About Us</a>
+                <a href="index.html#contact">Contact</a>
+                <a href="index.html#careers">Careers</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Colibry. All rights reserved. Belize CRM & AIgent AI Platform.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/job-application.js"></script>
+</body>
+</html>
