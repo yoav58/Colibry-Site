@@ -876,8 +876,19 @@ body {
 
 /* ===== MOBILE RESPONSIVENESS ===== */
 @media (max-width: 768px) {
+    /* Hide navigation links completely on mobile */
     .nav-links {
         display: none;
+    }
+
+    /* Show only the logo on mobile */
+    .nav-container {
+        justify-content: center;
+        padding: 1rem;
+    }
+
+    .hero {
+        padding: 10rem 2rem 4rem; /* Extra top padding for mobile */
     }
 
     .hero h1 {
@@ -949,7 +960,7 @@ body {
     }
 
     .hero {
-        padding: 6rem 1rem 2rem;
+        padding: 8rem 1rem 2rem;
     }
 
     .hero h1 {

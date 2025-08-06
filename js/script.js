@@ -119,7 +119,7 @@ function animateStats() {
             finalValue = 3.5;
             increment = 0.1;
         } else {
-            return; // Skip 24/7
+            return; // Skip others like "2023", "∞", "100%", "0"
         }
         
         const timer = setInterval(() => {
@@ -153,46 +153,6 @@ const statsObserver = new IntersectionObserver((entries) => {
 const statsSection = document.querySelector('.stats');
 if (statsSection) {
     statsObserver.observe(statsSection);
-}
-
-// ===== MOBILE MENU TOGGLE (for future enhancement) =====
-function initMobileMenu() {
-    const navContainer = document.querySelector('.nav-container');
-    const navLinks = document.querySelector('.nav-links');
-    
-    // Create mobile menu button
-    const mobileMenuBtn = document.createElement('button');
-    mobileMenuBtn.classList.add('mobile-menu-btn');
-    mobileMenuBtn.innerHTML = '☰';
-    mobileMenuBtn.style.display = 'none';
-    mobileMenuBtn.style.background = 'none';
-    mobileMenuBtn.style.border = 'none';
-    mobileMenuBtn.style.fontSize = '1.5rem';
-    mobileMenuBtn.style.color = '#38B2AC';
-    mobileMenuBtn.style.cursor = 'pointer';
-    
-    // Insert mobile menu button
-    navContainer.insertBefore(mobileMenuBtn, navLinks);
-    
-    // Toggle mobile menu
-    mobileMenuBtn.addEventListener('click', () => {
-        navLinks.classList.toggle('mobile-active');
-    });
-    
-    // Show/hide mobile menu button based on screen size
-    function checkScreenSize() {
-        if (window.innerWidth <= 768) {
-            mobileMenuBtn.style.display = 'block';
-            navLinks.style.display = navLinks.classList.contains('mobile-active') ? 'flex' : 'none';
-        } else {
-            mobileMenuBtn.style.display = 'none';
-            navLinks.style.display = 'flex';
-            navLinks.classList.remove('mobile-active');
-        }
-    }
-    
-    window.addEventListener('resize', checkScreenSize);
-    checkScreenSize();
 }
 
 // ===== PERFORMANCE OPTIMIZATION =====
@@ -254,8 +214,6 @@ formInputs.forEach(input => {
 
 // ===== INITIALIZE ON LOAD =====
 document.addEventListener('DOMContentLoaded', () => {
-    initMobileMenu();
-    
     // Add loading class to body initially
     document.body.classList.add('loading');
     
